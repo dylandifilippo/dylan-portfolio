@@ -74,7 +74,13 @@ const RecentProjects = () => {
                 </div>
 
                 <div className='flex justify-center items-center'>
-                  <p className='flex lg:text-xl md:text-xs text-sm text-purple'>Check Live Site</p>
+                  <a
+                    href={item.link}
+                    className='flex lg:text-xl md:text-xs text-sm text-purple'
+                    target='_blank'
+                  >
+                    Check Live Site
+                  </a>
                   <FaLocationArrow
                     className='ms-3'
                     color='#CBACF9'

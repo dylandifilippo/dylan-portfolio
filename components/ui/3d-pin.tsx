@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 export const PinContainer = ({
   children,
@@ -57,7 +58,7 @@ export const PinContainer = ({
 
 export const PinPerspective = ({ title, href }: { title?: string; href?: string }) => {
   return (
-    <motion.div className='pointer-events-none  w-96 h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500'>
+    <motion.div className='w-96 h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500'>
       <div className=' w-full h-full -mt-7 flex-none  inset-0'>
         <div className='absolute top-0 inset-x-0  flex justify-center'>
           <a
