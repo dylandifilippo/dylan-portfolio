@@ -159,12 +159,12 @@ export const testimonials = [
 ]
 
 export const companies = [
-  {
-    id: 1,
-    name: 'cinetelerevue',
-    img: '/logo/cinetelerevue.svg',
-    // nameImg: '/cloudName.svg',
-  },
+  // {
+  //   id: 1,
+  //   name: 'cinetelerevue',
+  //   img: '/logo/cinetelerevue.svg',
+  //   // nameImg: '/cloudName.svg',
+  // },
   {
     id: 2,
     name: 'metro',
