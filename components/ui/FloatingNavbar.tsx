@@ -53,7 +53,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          'flex max-w-fit fixed top-10 inset-x-0 mx-auto border rounded-full shadow-10px_2px_3px_-1px_rgba (0,0,0,0.1),Opx_1px_0px_0px_rgba (25,28, 33,0.02) ,Opx_ 0px_0px_1px_rgba(25, 28, 33,0.08)1 z-[5000] px-10 py-5 items-center justify-center space-x-4 口border-white/［0.2］ bg-black-100',
+          'flex flex-wrap gap-4 sm:gap-0 max-w-fit fixed top-10 inset-x-0 mx-auto border rounded-full shadow-10px_2px_3px_-1px_rgba (0,0,0,0.1),Opx_1px_0px_0px_rgba (25,28, 33,0.02) ,Opx_ 0px_0px_1px_rgba(25, 28, 33,0.08)1 z-[5000] px-10 py-5 items-center justify-center space-x-4 口border-white/［0.2］ bg-black-100',
           className
         )}
       >
@@ -66,7 +66,7 @@ export const FloatingNav = ({
             )}
           >
             <span className='block sm:hidden'>{navItem.icon}</span>
-            <span className=' text-sm !cursor-pointer'>{navItem.name}</span>
+            <span className='text-sm !cursor-pointer'>{navItem.name}</span>
           </Link>
         ))}
       </motion.div>
