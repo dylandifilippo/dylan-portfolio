@@ -14,7 +14,7 @@ const Clients = () => {
     >
       <h1 className='heading'>
         Kind words from
-        <span className='text-purple'> satisfied clients</span>
+        <span className='text-purple'> people I worked with</span>
       </h1>
 
       <div className='flex flex-col items-center mt-10'>
