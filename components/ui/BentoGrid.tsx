@@ -7,6 +7,7 @@ import { BackgroundGradientAnimation } from './GradientBg'
 import GridGlobe from './GridGlobe'
 import animationData from '../../data/confetti.json'
 import MagicButton from '../MagicButton'
+import Image from 'next/image'
 
 export const BentoGrid = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
   return (
@@ -37,15 +38,23 @@ export const BentoGridItem = ({
   titleClassName?: string
   spareImg?: string
 }) => {
-  const leftLists = ['ReactJS', 'Next.js', 'Typescript']
-  const rightLists = ['Node.js', 'Express', 'GraphQL']
+  const leftLists = ['ReactJS', 'Next.js', 'Typescript', 'Javascript']
+  const rightLists = ['Tailwind', 'Node.js', 'Express', 'GraphQL']
 
   const [copied, setCopied] = useState(false)
+  const [animationKey, setAnimationKey] = useState(0)
 
   const handleCopy = () => {
     const text = 'dylan.di.filippo@gmail.com'
     navigator.clipboard.writeText(text)
     setCopied(true)
+
+    setAnimationKey((prevKey) => prevKey + 1)
+
+    setTimeout(() => {
+      setCopied(false)
+      setAnimationKey(0)
+    }, 2000)
   }
 
   const defaultOptions = {
@@ -68,7 +77,6 @@ export const BentoGridItem = ({
         backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
       }}
     >
-      {/* add img divs */}
       <div className={`${id === 6 && 'flex justify-center'} h-full`}>
         <div className='w-full h-full absolute'>
           {img && (
@@ -84,7 +92,6 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
-              //   width={220}
               className='object-cover object-center w-full h-full'
             />
           )}
@@ -124,10 +131,10 @@ export const BentoGridItem = ({
                     {item}
                   </span>
                 ))}
-                <span className='lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]'></span>
+                {/* <span className='lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]'></span> */}
               </div>
               <div className='flex flex-col gap-3 md:gap-3 lg:gap-8'>
-                <span className='lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]'></span>
+                {/* <span className='lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]'></span> */}
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
@@ -141,10 +148,19 @@ export const BentoGridItem = ({
             </div>
           )}
           {id === 6 && (
-            <div className='mt-5 relative'>
-              <div className={`absolute -bottom-5 right-0 ${copied ? 'block' : 'block'}`}>
+            <div className='mt-5 md:mt-0  relative'>
+              <div className={`absolute -bottom-5 right-0 ${copied ? 'block' : 'block'} `}>
                 <Lottie
+                  key={animationKey}
                   options={defaultOptions}
+                  eventListeners={[
+                    {
+                      eventName: 'complete',
+                      callback: () => {
+                        setCopied(false)
+                      },
+                    },
+                  ]}
                   height={200}
                   width={400}
                 />
