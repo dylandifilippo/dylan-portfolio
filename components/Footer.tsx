@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { FaLocationArrow } from 'react-icons/fa6'
+import { FaLinkedin } from 'react-icons/fa6'
+import { MdOutlineEmail } from 'react-icons/md'
 
 import { socialMedia } from '@/data'
 import MagicButton from './MagicButton'
@@ -21,8 +23,15 @@ const Footer = () => {
         </p>
         <a href='mailto:dylan.di.filippo@gmail.com'>
           <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
+            title='Send me an email'
+            icon={<MdOutlineEmail />}
+            position='right'
+          />
+        </a>
+        <a href='https://www.linkedin.com/in/dylandifilippo/'>
+          <MagicButton
+            title='Connect with me on LinkedIn'
+            icon={<FaLinkedin />}
             position='right'
           />
         </a>

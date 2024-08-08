@@ -1,8 +1,10 @@
 import { FaLocationArrow } from 'react-icons/fa6'
+import { MdAdsClick } from 'react-icons/md'
 
 import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './MagicButton'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
@@ -44,13 +46,21 @@ const Hero = () => {
           />
 
           <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-            Hi! I&apos;m Dylan, a React Developer based in Belgium 🇧🇪
+            I&apos;m Dylan, a React Developer based in Belgium 🇧🇪
           </p>
+
+          <Image
+            src='/dylan.png'
+            alt='dylan di filippo'
+            className='w-32 h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 mb-4 md:mb-0'
+            width={600}
+            height={630}
+          />
 
           <a href='#about'>
             <MagicButton
-              title='Show my work'
-              icon={<FaLocationArrow />}
+              title='Click here to get to know me better'
+              icon={<MdAdsClick />}
               position='right'
             />
           </a>

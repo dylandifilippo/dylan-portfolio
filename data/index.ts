@@ -1,11 +1,19 @@
 export const navItems = [
   { name: 'About', link: '#about' },
-  { name: 'My Work', link: '#work' },
+  { name: 'Work', link: '#work' },
   { name: 'Testimonials', link: '#testimonials' },
   { name: 'Experience', link: '#experience' },
   { name: 'Approach', link: '#approach' },
   { name: 'Contact', link: '#contact' },
 ]
+
+export const profile = {
+  name: 'Dylan Di Filippo',
+  title: 'React Developer',
+  description:
+    'I am a React Developer based in Belgium, specializing in building and optimizing websites and web applications. I am passionate about creating user-friendly, responsive, and performant websites.',
+  img: '/dylan.webp',
+}
 
 export const gridItems = [
   {
