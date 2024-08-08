@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer
-      className='w-full mb-[100px] mb-5'
+      className='w-full mb-[40px]'
       id='contact'
     >
       <div className='flex flex-col items-center'>
