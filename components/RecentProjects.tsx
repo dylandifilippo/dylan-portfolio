@@ -10,10 +10,10 @@ const RecentProjects = () => {
   return (
     <div
       className='py-20'
-      id='projects'
+      id='work'
     >
       <h1 className='heading'>
-        A small selection of <span className='text-purple'>recent projects</span>
+        A selection of <span className='text-purple'>my work</span>
       </h1>
       <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
         {projects.map((item) => (
