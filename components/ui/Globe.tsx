@@ -146,16 +146,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
   useEffect(() => {
     if (globeRef.current && globeData) {
-      globeRef.current
-        .hexPolygonsData(countries.features)
-        .hexPolygonResolution(3)
-        .hexPolygonMargin(0.7)
-        .showAtmosphere(defaultProps.showAtmosphere)
-        .atmosphereColor(defaultProps.atmosphereColor)
-        .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor((e) => {
-          return defaultProps.polygonColor
-        })
+      globeRef.current.globeImageUrl('./globe/earth-blue-marble.png').bumpImageUrl('./globe/earth-topology.png')
       startAnimation()
     }
   }, [globeData])
