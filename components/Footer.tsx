@@ -1,10 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
-import { FaLocationArrow } from 'react-icons/fa6'
 import { FaLinkedin } from 'react-icons/fa6'
 import { MdOutlineEmail } from 'react-icons/md'
 
 import { socialMedia } from '@/data'
 import MagicButton from './MagicButton'
+import Image from 'next/image'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -53,7 +52,7 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer'
               >
-                <img
+                <Image
                   src={info.img}
                   alt='icons'
                   width={20}
