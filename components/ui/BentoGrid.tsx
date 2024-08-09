@@ -4,7 +4,6 @@ import Lottie from 'react-lottie'
 import { cn } from '@/lib/utils'
 
 import { BackgroundGradientAnimation } from './GradientBg'
-// import GridGlobe from './GridGlobe'
 import animationData from '../../data/confetti.json'
 import MagicButton from '../MagicButton'
 import Image from 'next/image'
@@ -120,11 +119,8 @@ export const BentoGridItem = ({
 
           <div className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}>{title}</div>
 
-          {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />}
-
           {/* Tech stack list div */}
-          {id === 3 && (
+          {id === 2 && (
             <div className='flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2'>
               {/* tech stack lists */}
               <div className='flex flex-col gap-3 md:gap-3 lg:gap-8'>
@@ -153,6 +149,10 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
+
+          {/* for the github 3d globe */}
+          {id === 3 && <GridGlobe />}
+
           {id === 6 && (
             <div className='mt-5 md:mt-0  relative'>
               <div className={`absolute -bottom-5 right-0 ${copied ? 'block' : 'block'} `}>
