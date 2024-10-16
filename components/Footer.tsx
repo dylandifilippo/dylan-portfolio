@@ -29,7 +29,10 @@ const Footer = () => {
               position='right'
             />
           </a>
-          <a href='https://www.linkedin.com/in/dylandifilippo/'>
+          <a
+            href='https://www.linkedin.com/in/dylandifilippo/'
+            target='_blank'
+          >
             <MagicButton
               title='Connect with me on LinkedIn'
               icon={<FaLinkedin />}
