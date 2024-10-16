@@ -1,4 +1,4 @@
-import { lazy, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { IoCopyOutline } from 'react-icons/io5'
 import Lottie from 'react-lottie'
 import { cn } from '@/lib/utils'
@@ -8,7 +8,7 @@ import animationData from '../../data/confetti.json'
 import MagicButton from '../MagicButton'
 import Image from 'next/image'
 
-const GridGlobe = lazy(() => import('./GridGlobe'))
+import GridGlobe from './GridGlobe'
 
 export const BentoGrid = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
   return (
@@ -44,6 +44,35 @@ export const BentoGridItem = ({
 
   const [copied, setCopied] = useState(false)
   const [animationKey, setAnimationKey] = useState(0)
+  const [showGridGlobe, setShowGridGlobe] = useState(false)
+  const gridGlobeRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          console.log('Intersection Observer entry:', entry) // Debugging log
+          if (entry.isIntersecting) {
+            console.log('GridGlobe is in view') // Debugging log
+            setShowGridGlobe(true)
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.1 } // Adjust threshold as needed
+    )
+
+    const currentRef = gridGlobeRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
+    }
+  }, [])
 
   const handleCopy = () => {
     const text = 'dylan.di.filippo@gmail.com'
@@ -151,7 +180,14 @@ export const BentoGridItem = ({
           )}
 
           {/* for the github 3d globe */}
-          {id === 3 && <GridGlobe />}
+          {id === 3 && (
+            <div
+              ref={gridGlobeRef}
+              style={{ minHeight: '200px' }}
+            >
+              {showGridGlobe && <GridGlobe />}
+            </div>
+          )}
 
           {id === 6 && (
             <div className='mt-5 md:mt-0  relative'>
